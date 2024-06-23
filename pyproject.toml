@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "jmdots-workbench"
+version = "0.1.0"
+description = "An OS-agnostic clipboard utility."
+authors = ["JMDOTS <contact@jmdots.com>"]
+packages = [{include = "workbench", from = "src"}]
+license = "JMDOTS-DUAL-LICENSE-1.2: Dual licensed under Commercial License and GNU Affero General Public License v3"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+click = "^8.0.0"
+pyperclip = "^1.8.2"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.5"
+
+[tool.poetry.group.dev.dependencies]
+pytest-mock = "^3.14.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+wbcopy = "workbench.commands.copy:copy"
+wbpaste = "workbench.commands.paste:paste"
+wbrebase = "workbench.commands.rebase:rebase"
