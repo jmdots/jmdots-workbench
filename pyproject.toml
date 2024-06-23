@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "jmdots-workbench"
-version = "0.1.0"
+version = "0.1.1"
 description = "An OS-agnostic clipboard utility."
 authors = ["JMDOTS <contact@jmdots.com>"]
 packages = [{include = "workbench", from = "src"}]

@@ -2,14 +2,10 @@
 NAME := $(shell grep '^name =' pyproject.toml | sed -E "s/name = \"(.*)\"/\\1/")
 VERSION := $(shell grep '^version =' pyproject.toml | sed -E "s/version = \"(.*)\"/\\1/")
 
-# Define the desired output file names
-WHEEL_NAME := $(NAME)-$(VERSION)-py3-none-any.whl
-SDIST_NAME := $(NAME)-$(VERSION).tar.gz
-
 .PHONY: install dev-install test ls dist clean
 
 install: dist
-	pip install dist/$(SDIST_NAME)
+	pip install dist/*.whl
 
 dev-install:
 	poetry install
