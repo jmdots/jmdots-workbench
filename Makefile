@@ -5,7 +5,7 @@ VERSION := $(shell grep '^version =' pyproject.toml | sed -E "s/version = \"(.*)
 .PHONY: install dev-install test ls dist clean
 
 install: dist
-	pip install dist/*.whl
+	pip install --force-reinstall dist/*.whl
 
 dev-install:
 	poetry install

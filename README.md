@@ -35,6 +35,27 @@ Steps taken by `wbrebase`:
 - Step 7: Push changes
 - Step 8: Show commit log
 
+### `wbsync`
+
+This tool automates the process of performing a two-way sync between a local directory and a remote directory using `rsync` over SSH.
+
+Usage: `wbsync --remote USER@SERVER --remote-dir /PATH/TO/REMOTE/DIR --local-dir /PATH/TO/LOCAL/DIR`
+
+Steps taken by `wbsync`:
+
+- Step 1: Validate input parameters
+- Step 2: Ensure directory paths end with a slash
+- Step 3: Sync from remote to local using rsync over SSH
+- Step 4: Sync from local to remote using rsync over SSH
+- Step 5: Report successful completion or any errors encountered
+
+Note: This command requires SSH key-based authentication to be set up with the remote server to avoid password prompts during the sync process.
+
+Example:
+```bash
+wbsync --remote user@server.example.com --remote-dir /path/to/remote/dir --local-dir /path/to/local/dir
+```
+
 ## Installation
 
 To install the project to your host Python conda environment outside of Poetry, ensure you have Poetry and GNU Make installed as prerequisites. Then follow these steps:
