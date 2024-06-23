@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "jmdots-workbench"
-version = "0.1.1"
+version = "0.2.0"
 description = "An OS-agnostic clipboard utility."
 authors = ["JMDOTS <contact@jmdots.com>"]
 packages = [{include = "workbench", from = "src"}]
@@ -25,3 +25,4 @@ build-backend = "poetry.core.masonry.api"
 wbcopy = "workbench.commands.copy:copy"
 wbpaste = "workbench.commands.paste:paste"
 wbrebase = "workbench.commands.rebase:rebase"
+wbsync = "workbench.commands.sync:sync"
